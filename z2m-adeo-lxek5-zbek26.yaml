@@ -635,7 +635,7 @@ action:
 #####################################################
   - conditions:
     - condition: template
-      value_template: '{{(v__button_pressed == "SCENE_1" and v__entity_1 is not none ) or (v__button_pressed == "SCENE_2" and v__entity_2 is not none) or (v__button_pressed == "SCENE_3" and v__entity_3 is not none) or (v__button_pressed == "SCENE_4" and v__entity_4 is not none) )}'
+      value_template: '{{(v__button_pressed == "SCENE_1" and v__entity_1 is not none ) or (v__button_pressed == "SCENE_2" and v__entity_2 is not none) or (v__button_pressed == "SCENE_3" and v__entity_3 is not none) or (v__button_pressed == "SCENE_4" and v__entity_4 is not none)}}'
     sequence:
       - choose:
 
