@@ -2,7 +2,7 @@ variables:
   controller_actions: &controller_actions #Dictionary of actions/buttons on remote controller
     - label: "1. Turn on"
       value: TURN_ON
-    - label: "2. Turn off" 
+    - label: "2. Turn off"
       value: TURN_OFF
     - label: "3. Scene 1 (one square)"
       value: SCENE_1
@@ -11,7 +11,7 @@ variables:
     - label: "5. Scene 3 (three squares)"
       value: SCENE_3
     - label: "6. Scene 4 (four squares)"
-      value: SCENE_4        
+      value: SCENE_4
     - label: "7. Dim up (right up)"
       value: "DIM_UP"
     - label: "8. Dim up (right up - long press)"
@@ -23,11 +23,11 @@ variables:
     - label: "11. Color up (D-pad up with red LED)"
       value: "COLOR_UP"
     - label: "12. Color up (D-pad up with red LED - long press)"
-      value: "COLOR_UP_LP"  
+      value: "COLOR_UP_LP"
     - label: "13. Color down (D-pad down with red LED)"
       value: "COLOR_DOWN"
     - label: "14. Color down (D-pad down with red LED - long press)"
-      value: "COLOR_DOWN_LP"  
+      value: "COLOR_DOWN_LP"
     - label: "15. Saturation up (D-pad up with green LED)"
       value: "SATURATION_UP"
     - label: "16. Saturation up (D-pad up with green LED - long press)"
@@ -40,8 +40,8 @@ variables:
       value: "HUE_LEFT"
     - label: "20. Hue right (D-pad right with green LED)"
       value: "HUE_RIGHT"
-     
-     
+
+
 blueprint:
   name: Zigbee2MQTT Adeo LXEK-5/ZBEK-26 v1.3.0
   description: |
@@ -51,32 +51,32 @@ blueprint:
   source_url: https://github.com/SirYasko/HA-Blueprints/blob/main/zha-adeo-lxek5-zbek26-btn.yaml
   domain: automation
   author: SirYasko - SoaR245
-  homeassistant: 
+  homeassistant:
     min_version: 2024.6.0
-    
+
   input:
     section_debug:
       name: "## Debugging and error detection"
       icon: mdi:bug-outline
       description: "Enable when you know what you're doing - helpful for error detection and debugging"
       collapsed: true
-      input: 
+      input:
         i__debug_f:
           name: (Required) Send debug notifications to HA
-          description: Disabled by default 
+          description: Disabled by default
           default: false
           selector:
             boolean:
-          
-        i__debug_button: 
+
+        i__debug_button:
           name: "Simulate a button press"
           description: ""
           selector:
            select:
-              mode: dropdown 
+              mode: dropdown
               options: *controller_actions
           default: null
-                 
+
     i__remote:
       name: (Required) Adeo LXEK-5/ZBEK-26 remote controller
       description: Select the remote controller you wish to use.
@@ -91,47 +91,47 @@ blueprint:
       icon: mdi:power
       description: ""
       collapsed: false
-      input: 
-      
-        i__action_button_on:  
+      input:
+
+        i__action_button_on:
           name: (Optional) Action for [Turn on] button
           description: "I button"
           selector:
             action: {}
-          default: []          
-        
-        i__action_button_off: 
+          default: []
+
+        i__action_button_off:
           name: (Optional) Action for [Turn off] button
           description: "O button"
           selector:
             action: {}
           default: []
- 
+
     section_scenes:
       name: "## Configuration - scenes"
       description: ""
       icon: mdi:numeric-4-box-multiple-outline
       collapsed: false
-      input: 
-      
-        i__action_button_scene_1: 
+      input:
+
+        i__action_button_scene_1:
           name: (Optional) Action for [Scene 1] button
           description: |
-            &#x25A0; 
-          selector:
-            action: {}
-          default: []
-          
-        i__action_button_scene_2: 
-          name: (Optional) Action for [Scene 2] button
-          description: |
-            &#x25A0; 
             &#x25A0;
           selector:
             action: {}
           default: []
-          
-        i__action_button_scene_3: 
+
+        i__action_button_scene_2:
+          name: (Optional) Action for [Scene 2] button
+          description: |
+            &#x25A0;
+            &#x25A0;
+          selector:
+            action: {}
+          default: []
+
+        i__action_button_scene_3:
           name: (Optional) Action for [Scene 3] button
           description: |
             &#x25A0;&nbsp;&ensp;&#x25A0;
@@ -139,8 +139,8 @@ blueprint:
           selector:
             action: {}
           default: []
-        
-        i__action_button_scene_4: 
+
+        i__action_button_scene_4:
           name: (Optional) Action for [Scene 4] button
           description: |
             &#x25A0;&nbsp;&ensp;&#x25A0;
@@ -154,80 +154,80 @@ blueprint:
       description: ""
       icon: mdi:menu-swap-outline
       collapsed: false
-      input: 
-      
-        i__action_button_dim_up: 
+      input:
+
+        i__action_button_dim_up:
           name: (Optional) Action for [Dim up] button
           description: "▲ - up button on the right"
           selector:
             action: {}
           default: []
-          
-        i__action_button_dim_down: 
+
+        i__action_button_dim_down:
           name: (Optional) Action for [Dim down] button
-          description: "▼ - down button on the right" 
+          description: "▼ - down button on the right"
           selector:
             action: {}
           default: []
-          
+
     section_dpad:
       name: "## Configuration - d-pad"
       description: ""
       icon: mdi:gamepad-outline
       collapsed: false
-      input: 
-      
-        i__action_button_color_up: 
+      input:
+
+        i__action_button_color_up:
           name: (Optional) Action for [Color up] button
           description: "▲ ▲ D-pad up with red LED"
           selector:
             action: {}
           default: []
-          
-        i__action_button_color_down: 
+
+        i__action_button_color_down:
           name: (Optional) Action for [Color down] button
           description: "▼ ▼ D-pad down with red LED"
           selector:
             action: {}
           default: []
-          
-        i__action_button_saturation_up: 
+
+        i__action_button_saturation_up:
           name: (Optional) Action for [Saturation up] button
           description: "▲ ▲ D-pad up with green LED"
           selector:
             action: {}
           default: []
-          
-        i__action_button_saturation_down: 
+
+        i__action_button_saturation_down:
           name: (Optional) Action for [Saturation down] button
           description: "▼ ▼ D-pad down with green LED"
           selector:
             action: {}
           default: []
-        
-        i__action_button_hue_left: 
+
+        i__action_button_hue_left:
           name: (Optional) Action for [Hue left] button
           description: "◄ ◄ D-pad left with green LED"
           selector:
             action: {}
           default: []
-          
-        i__action_button_hue_right: 
+
+        i__action_button_hue_right:
           name: (Optional) Action for [Hue right] button
           description: "► ► D-pad right with green LED"
           selector:
             action: {}
           default: []
-          
+
 
 mode: restart
 max_exceeded: silent
-  
+
 trigger:
 - platform: device
   domain: mqtt
   device_id: !input i__remote
- 
+
 action:
 - variables:
     v__payload:         '{% if trigger.payload is defined %} {{trigger.payload}} {% elif v__debug_button is not none %} debug_button {% endif %}'
@@ -250,7 +250,7 @@ action:
       {% elif v__payload == "color_stop"                    STOP
       {% elif v__payload == "brightness_stop"               STOP
       {% else %}                                            UNKNOWN
-      {% endif %} 
+      {% endif %}
     v__action_button_on:                   !input i__action_button_on
     v__action_button_off:                  !input i__action_button_off
     v__action_button_scene_1:              !input i__action_button_scene_1
@@ -264,13 +264,13 @@ action:
     v__action_button_saturation_up:        !input i__action_button_saturation_up
     v__action_button_saturation_down:      !input i__action_button_saturation_down
     v__action_button_hue_right:            !input i__action_button_hue_right
-    v__action_button_hue_left:             !input i__action_button_hue_left  
-    
-# DEBUG  
+    v__action_button_hue_left:             !input i__action_button_hue_left
+
+# DEBUG
 - choose:
   - conditions:
     - condition: template
-      value_template: '{{ v__debug_f == true }}' 
+      value_template: '{{ v__debug_f == true }}'
     sequence:
       - service: persistent_notification.create
         data:
@@ -293,42 +293,42 @@ action:
              v__action_button_saturation_down: {{v__action_button_saturation_down }};
              v__action_button_hue_right:       {{v__action_button_hue_right       }};
              v__action_button_hue_left:        {{v__action_button_hue_left        }};
-             
+
   default: []
-  
+
 - choose:
-  
-  #OFF  
+
+  #OFF
   - conditions:
     - condition: template
       value_template: '{{ v__button_pressed == "TURN_OFF" }}'
     sequence: !input i__action_button_off
 
-  #ON 
+  #ON
   - conditions:
     - condition: template
       value_template: '{{ v__button_pressed == "TURN_ON" }}'
     sequence: !input i__action_button_on
 
-  #SCENE 1 
+  #SCENE 1
   - conditions:
     - condition: template
       value_template: '{{ v__button_pressed == "SCENE_1" }}'
     sequence: !input i__action_button_scene_1
 
-  #SCENE 2 
+  #SCENE 2
   - conditions:
     - condition: template
       value_template: '{{ v__button_pressed == "SCENE_2" }}'
     sequence: !input i__action_button_scene_2
 
-  #SCENE 3 
+  #SCENE 3
   - conditions:
     - condition: template
       value_template: '{{ v__button_pressed == "SCENE_3" }}'
     sequence: !input i__action_button_scene_3
 
-  #SCENE 4 
+  #SCENE 4
   - conditions:
     - condition: template
       value_template: '{{ v__button_pressed == "SCENE_4" }}'
@@ -339,7 +339,7 @@ action:
     - condition: template
       value_template: '{{ v__button_pressed == "DIM_UP" }}'
     sequence: !input i__action_button_dim_up
-    
+
   #DIM_DOWN
   - conditions:
     - condition: template
@@ -381,5 +381,5 @@ action:
     - condition: template
       value_template: '{{ v__button_pressed == "HUE_LEFT" }}'
     sequence: !input i__action_button_hue_left
-    
+
   default: []
