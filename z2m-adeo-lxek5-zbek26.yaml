@@ -72,14 +72,14 @@ variables:
       value: "HUE_RIGHT"
 
 blueprint:
-  name: SirYasko's LXEK-5/ZBEK-26 v2.2.0
+  name: Zigbee2MQTT Adeo LXEK-5/ZBEK-26 v2.2.0
   description: |
     Control various devices with the Adeo LXEK-5/ZBEK-26 (Leroy Merlin - Lexman) remote connected via Zigbee2MQTT
     HR-C99C-Z-C045 - https://zigbee.blakadder.com/ADEO_HR-C99C-Z-C045.html - https://www.zigbee2mqtt.io/devices/HR-C99C-Z-C045.html
     ![Device Image](https://github.com/SirYasko/HA-Blueprints/raw/main/zha-adeo-lxek5-zbek26.png)
   source_url: https://github.com/SirYasko/HA-Blueprints/blob/main/zha-adeo-lxek5-zbek26.yaml
   domain: automation
-  author: SirYasko
+  author: SirYasko - SoaR245
   homeassistant:
     min_version: 2024.6.0
 
@@ -548,23 +548,23 @@ action:
 - variables:
     v__payload:         '{% if trigger.payload is defined %} {{trigger.payload}} {% elif v__debug_button is not none %} debug_button {% endif %}'
     v__button_pressed: >
-      {% if   v__command == "debug_button"                  {{ v__debug_button }}
-      {% elif v__command == "on"                            TURN_ON
-      {% elif v__command == "off"                           TURN_OFF
-      {% elif v__command == "scene_1"                       SCENE_1
-      {% elif v__command == "scene_2"                       SCENE_2
-      {% elif v__command == "scene_3"                       SCENE_3
-      {% elif v__command == "scene_4"                       SCENE_4
-      {% elif v__command == "brightness_step_up"            DIM_UP
-      {% elif v__command == "brightness_step_down"          DIM_DOWN
-      {% elif v__command == "color_temperature_step_up"     COLOR_UP
-      {% elif v__command == "color_temperature_step_down"   COLOR_DOWN
-      {% elif v__command == "color_saturation_step_up"      SATURATION_UP
-      {% elif v__command == "color_saturation_step_down"    SATURATION_DOWN
-      {% elif v__command == "color_hue_step_up"             HUE_LEFT
-      {% elif v__command == "color_hue_step_down"           HUE_RIGHT
-      {% elif v__command == "color_stop"                    STOP
-      {% elif v__command == "brightness_stop"               STOP
+      {% if   v__payload == "debug_button"                  {{ v__debug_button }}
+      {% elif v__payload == "on"                            TURN_ON
+      {% elif v__payload == "off"                           TURN_OFF
+      {% elif v__payload == "scene_1"                       SCENE_1
+      {% elif v__payload == "scene_2"                       SCENE_2
+      {% elif v__payload == "scene_3"                       SCENE_3
+      {% elif v__payload == "scene_4"                       SCENE_4
+      {% elif v__payload == "brightness_step_up"            DIM_UP
+      {% elif v__payload == "brightness_step_down"          DIM_DOWN
+      {% elif v__payload == "color_temperature_step_up"     COLOR_UP
+      {% elif v__payload == "color_temperature_step_down"   COLOR_DOWN
+      {% elif v__payload == "color_saturation_step_up"      SATURATION_UP
+      {% elif v__payload == "color_saturation_step_down"    SATURATION_DOWN
+      {% elif v__payload == "color_hue_step_up"             HUE_LEFT
+      {% elif v__payload == "color_hue_step_down"           HUE_RIGHT
+      {% elif v__payload == "color_stop"                    STOP
+      {% elif v__payload == "brightness_stop"               STOP
       {% else %}                                            UNKNOWN
       {% endif %}
     v__entity_first: >
@@ -635,7 +635,7 @@ action:
 #####################################################
   - conditions:
     - condition: template
-      value_template: '{{ v__command == "view" and ( (v__button_pressed == "SCENE_1" and v__entity_1 is not none ) or (v__button_pressed == "SCENE_2" and v__entity_2 is not none) or (v__button_pressed == "SCENE_3" and v__entity_3 is not none) or (v__button_pressed == "SCENE_4" and v__entity_4 is not none) ) }}'
+      value_template: '{{(v__button_pressed == "SCENE_1" and v__entity_1 is not none ) or (v__button_pressed == "SCENE_2" and v__entity_2 is not none) or (v__button_pressed == "SCENE_3" and v__entity_3 is not none) or (v__button_pressed == "SCENE_4" and v__entity_4 is not none) )}'
     sequence:
       - choose:
 
