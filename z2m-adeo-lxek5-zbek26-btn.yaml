@@ -278,7 +278,7 @@ action:
           message: |
              v__payload:                     {{v__payload                    }};
              v__button_pressed:              {{v__button_pressed             }};
-             ________________________________________________________________________
+             _________________________________________________________________
              v__action_button_on:              {{v__action_button_on              }};
              v__action_button_off:             {{v__action_button_off             }};
              v__action_button_scene_1:         {{v__action_button_scene_1         }};
