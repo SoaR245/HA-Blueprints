@@ -119,9 +119,7 @@ blueprint:
             device:
               filter:
                 - integration: mqtt
-                  model: LXEK-5
-                - integration: mqtt
-                  model: ZBEK-26
+                  model: RGB CTT LEXMAN ENKI remote control
 
         i__entity_helper:
           name: (Required) Helper
