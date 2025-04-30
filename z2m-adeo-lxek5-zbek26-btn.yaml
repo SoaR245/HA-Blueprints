@@ -278,21 +278,21 @@ action:
           message: |
              v__payload:                     {{v__payload                    }};
              v__button_pressed:              {{v__button_pressed             }};
-            ________________________________________________________________________
-            v__action_button_on:              {{v__action_button_on              }};
-            v__action_button_off:             {{v__action_button_off             }};
-            v__action_button_scene_1:         {{v__action_button_scene_1         }};
-            v__action_button_scene_2:         {{v__action_button_scene_2         }};
-            v__action_button_scene_3:         {{v__action_button_scene_3         }};
-            v__action_button_scene_4:         {{v__action_button_scene_4         }};
-            v__action_button_dim_up:          {{v__action_button_dim_up          }};
-            v__action_button_dim_down:        {{v__action_button_dim_down        }};
-            v__action_button_color_up:        {{v__action_button_color_up        }};
-            v__action_button_color_down:      {{v__action_button_color_down      }};
-            v__action_button_saturation_up:   {{v__action_button_saturation_up   }};
-            v__action_button_saturation_down: {{v__action_button_saturation_down }};
-            v__action_button_hue_right:       {{v__action_button_hue_right       }};
-            v__action_button_hue_left:        {{v__action_button_hue_left        }};
+             ________________________________________________________________________
+             v__action_button_on:              {{v__action_button_on              }};
+             v__action_button_off:             {{v__action_button_off             }};
+             v__action_button_scene_1:         {{v__action_button_scene_1         }};
+             v__action_button_scene_2:         {{v__action_button_scene_2         }};
+             v__action_button_scene_3:         {{v__action_button_scene_3         }};
+             v__action_button_scene_4:         {{v__action_button_scene_4         }};
+             v__action_button_dim_up:          {{v__action_button_dim_up          }};
+             v__action_button_dim_down:        {{v__action_button_dim_down        }};
+             v__action_button_color_up:        {{v__action_button_color_up        }};
+             v__action_button_color_down:      {{v__action_button_color_down      }};
+             v__action_button_saturation_up:   {{v__action_button_saturation_up   }};
+             v__action_button_saturation_down: {{v__action_button_saturation_down }};
+             v__action_button_hue_right:       {{v__action_button_hue_right       }};
+             v__action_button_hue_left:        {{v__action_button_hue_left        }};
              
   default: []
   
@@ -383,7 +383,3 @@ action:
     sequence: !input i__action_button_hue_left
     
   default: []
-  
-   
-
-   
