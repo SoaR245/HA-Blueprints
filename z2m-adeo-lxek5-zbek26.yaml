@@ -548,23 +548,23 @@ action:
 - variables:
     v__payload:         '{% if trigger.payload is defined %} {{trigger.payload}} {% elif v__debug_button is not none %} debug_button {% endif %}'
     v__button_pressed: >
-      {% if   v__payload == "debug_button"                  {{ v__debug_button }}
-      {% elif v__payload == "on"                            TURN_ON
-      {% elif v__payload == "off"                           TURN_OFF
-      {% elif v__payload == "scene_1"                       SCENE_1
-      {% elif v__payload == "scene_2"                       SCENE_2
-      {% elif v__payload == "scene_3"                       SCENE_3
-      {% elif v__payload == "scene_4"                       SCENE_4
-      {% elif v__payload == "brightness_step_up"            DIM_UP
-      {% elif v__payload == "brightness_step_down"          DIM_DOWN
-      {% elif v__payload == "color_temperature_step_up"     COLOR_UP
-      {% elif v__payload == "color_temperature_step_down"   COLOR_DOWN
-      {% elif v__payload == "color_saturation_step_up"      SATURATION_UP
-      {% elif v__payload == "color_saturation_step_down"    SATURATION_DOWN
-      {% elif v__payload == "color_hue_step_up"             HUE_LEFT
-      {% elif v__payload == "color_hue_step_down"           HUE_RIGHT
-      {% elif v__payload == "color_stop"                    STOP
-      {% elif v__payload == "brightness_stop"               STOP
+      {% if   v__payload == "debug_button"                %}  {{ v__debug_button }}
+      {% elif v__payload == "on"                          %}  TURN_ON
+      {% elif v__payload == "off"                         %}  TURN_OFF
+      {% elif v__payload == "scene_1"                     %}  SCENE_1
+      {% elif v__payload == "scene_2"                     %}  SCENE_2
+      {% elif v__payload == "scene_3"                     %}  SCENE_3
+      {% elif v__payload == "scene_4"                     %}  SCENE_4
+      {% elif v__payload == "brightness_step_up"          %}  DIM_UP
+      {% elif v__payload == "brightness_step_down"        %}  DIM_DOWN
+      {% elif v__payload == "color_temperature_step_up"   %}  COLOR_UP
+      {% elif v__payload == "color_temperature_step_down" %}  COLOR_DOWN
+      {% elif v__payload == "color_saturation_step_up"    %}  SATURATION_UP
+      {% elif v__payload == "color_saturation_step_down"  %}  SATURATION_DOWN
+      {% elif v__payload == "color_hue_step_up"           %}  HUE_LEFT
+      {% elif v__payload == "color_hue_step_down"         %}  HUE_RIGHT
+      {% elif v__payload == "color_stop"                  %}  STOP
+      {% elif v__payload == "brightness_stop"             %}  STOP
       {% else %}                                            UNKNOWN
       {% endif %}
     v__entity_first: >
