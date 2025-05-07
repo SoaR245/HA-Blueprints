@@ -223,10 +223,89 @@ blueprint:
 mode: restart
 max_exceeded: silent
 
-trigger:
-- platform: device
-  domain: mqtt
-  device_id: !input i__remote
+
+triggers:
+  # triggers for zigbee2mqtt mqtt device action
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'on'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'off'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'scene_1'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'scene_2'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'scene_3'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'scene_4'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'brightness_step_up'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'brightness_step_down'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'color_temperature_step_up'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'color_temperature_step_down'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'color_saturation_step_up'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'color_saturation_step_down'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'color_hue_step_up'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'color_hue_step_down'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'color_stop'
+  - trigger: device
+    domain: mqtt
+    device_id: !input i__remote
+    type: action
+    subtype: 'brightness_stop'
 
 action:
 - variables:
